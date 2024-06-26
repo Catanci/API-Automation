@@ -8,7 +8,6 @@ import com.zebrunner.carina.api.http.HttpResponseStatusType;
 import com.zebrunner.carina.utils.config.Configuration;
 
 @Endpoint(url = "${base_url}/v2/user/bogdanoff", methodType = HttpMethodType.DELETE)
-//@RequestTemplatePath(path = "api/users/_delete/rq.json")
 @ResponseTemplatePath(path = "api/users/_delete/urs.json")
 @Header(key = "api-key", value = "special-key")
 @SuccessfulHttpStatus(status = HttpResponseStatusType.OK_200)
