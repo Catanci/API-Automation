@@ -8,12 +8,12 @@ import com.zebrunner.carina.api.http.HttpMethodType;
 import com.zebrunner.carina.api.http.HttpResponseStatusType;
 import com.zebrunner.carina.utils.config.Configuration;
 
-@Endpoint(url = "${base_url}/v2/user/user1", methodType = HttpMethodType.GET)
-@ResponseTemplatePath(path = "api/users/_get/urs.json")
+@Endpoint(url = "${base_url}/v2/pet/1", methodType = HttpMethodType.GET)
+@ResponseTemplatePath(path = "api/users/_get/rs.json")
 @SuccessfulHttpStatus(status = HttpResponseStatusType.OK_200)
-public class GetUserMethods extends AbstractApiMethodV2 {
+public class GetPetMethods extends AbstractApiMethodV2 {
 
-    public GetUserMethods() {
+    public GetPetMethods() {
         replaceUrlPlaceholder("base_url", Configuration.getRequired("api_url"));
     }
 }

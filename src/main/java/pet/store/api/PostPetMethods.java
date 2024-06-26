@@ -13,9 +13,9 @@ import com.zebrunner.carina.utils.config.Configuration;
 @RequestTemplatePath(path = "api/users/_post/rq.json")
 @ResponseTemplatePath(path = "api/users/_post/rs.json")
 @SuccessfulHttpStatus(status = HttpResponseStatusType.OK_200)
-public class PostUserMethod extends AbstractApiMethodV2 {
+public class PostPetMethods extends AbstractApiMethodV2 {
 
-    public PostUserMethod() {
+    public PostPetMethods() {
         replaceUrlPlaceholder("base_url", Configuration.getRequired("api_url"));
     }
 }

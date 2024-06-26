@@ -1,0 +1,10 @@
+{
+  "id": "skip",
+  "username": "user1",
+  "firstName": "type:String",
+  "lastName": "type:String",
+  "email": "skip",
+  "password": "skip",
+  "phone": "skip",
+  "userStatus": 0
+}

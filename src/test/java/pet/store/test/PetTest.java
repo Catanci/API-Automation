@@ -9,9 +9,9 @@ import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
 import com.zebrunner.carina.core.registrar.tag.Priority;
 import com.zebrunner.carina.core.registrar.tag.TestPriority;
 
-import pet.store.api.DeleteUserMethod;
-import pet.store.api.GetUserMethods;
-import pet.store.api.PostUserMethod;
+import pet.store.api.DeletePetMethods;
+import pet.store.api.GetPetMethods;
+import pet.store.api.PostPetMethods;
 import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,8 +26,8 @@ public class PetTest implements IAbstractTest {
     @Test()
     @MethodOwner(owner = "abuda")
     public void testCreatePet() {
-        LOGGER.info("test");
-        PostUserMethod api = new PostUserMethod();
+        LOGGER.info("Test is starting...");
+        PostPetMethods api = new PostPetMethods();
         api.setProperties("api/users/user.properties");
         api.expectResponseStatus(HttpResponseStatusType.OK_200);
         api.callAPI();
@@ -37,7 +37,7 @@ public class PetTest implements IAbstractTest {
     @Test()
     @MethodOwner(owner = "abuda")
     public void testCreatePetMissingSomeFields() throws Exception {
-        PostUserMethod api = new PostUserMethod();
+        PostPetMethods api = new PostPetMethods();
         api.setProperties("api/users/user.properties");
         api.getProperties().remove("id");
         api.getProperties().remove("name");
@@ -47,21 +47,20 @@ public class PetTest implements IAbstractTest {
 
     @Test()
     @MethodOwner(owner = "abuda")
-    public void testGetUsers() {
-        GetUserMethods getUsersMethods = new GetUserMethods();
-        getUsersMethods.callAPIExpectSuccess();
-        getUsersMethods.validateResponse(JSONCompareMode.STRICT, JsonCompareKeywords.ARRAY_CONTAINS.getKey());
-        getUsersMethods.validateResponseAgainstSchema("api/users/_get/rs.schema");
+    public void testGetPets() {
+        GetPetMethods getPetMethods = new GetPetMethods();
+        getPetMethods.callAPIExpectSuccess();
+        getPetMethods.validateResponse(JSONCompareMode.STRICT, JsonCompareKeywords.ARRAY_CONTAINS.getKey());
+        getPetMethods.validateResponseAgainstSchema("api/users/_get/rs.schema");
     }
 
     @Test()
     @MethodOwner(owner = "abuda")
     @TestPriority(Priority.P1)
-    public void testDeleteUsers() {
-        DeleteUserMethod deleteUserMethod = new DeleteUserMethod();
-        deleteUserMethod.setProperties("api/users/user.properties");
-        deleteUserMethod.callAPIExpectSuccess();
-        deleteUserMethod.validateResponse();
+    public void testDeletePets() {
+        DeletePetMethods deletePetMethods = new DeletePetMethods();
+        deletePetMethods.setProperties("api/users/user.properties");
+        deletePetMethods.callAPIExpectSuccess();
+        deletePetMethods.validateResponse();
     }
-
 }

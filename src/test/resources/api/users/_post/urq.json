@@ -1,0 +1,10 @@
+{
+  "id": "${static_id}",
+  "username": "bogdanoff",
+  "firstName": "${random_text}",
+  "lastName": "${random_text}",
+  "email": "${email}",
+  "password": "${password}",
+  "phone": "${number}",
+  "userStatus": 0
+}
