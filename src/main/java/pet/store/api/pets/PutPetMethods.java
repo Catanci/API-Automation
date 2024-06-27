@@ -1,19 +1,21 @@
-package pet.store.api;
+package pet.store.api.pets;
 
 import com.zebrunner.carina.api.AbstractApiMethodV2;
 import com.zebrunner.carina.api.annotation.Endpoint;
+import com.zebrunner.carina.api.annotation.RequestTemplatePath;
 import com.zebrunner.carina.api.annotation.ResponseTemplatePath;
 import com.zebrunner.carina.api.annotation.SuccessfulHttpStatus;
 import com.zebrunner.carina.api.http.HttpMethodType;
 import com.zebrunner.carina.api.http.HttpResponseStatusType;
 import com.zebrunner.carina.utils.config.Configuration;
 
-@Endpoint(url = "${base_url}/v2/pet/1", methodType = HttpMethodType.GET)
-@ResponseTemplatePath(path = "api/users/_get/rs.json")
+@Endpoint(url = "${base_url}/v2/pet", methodType = HttpMethodType.PUT)
+@RequestTemplatePath(path = "api/users/_update/rq.json")
+@ResponseTemplatePath(path = "api/users/_update/rs.json")
 @SuccessfulHttpStatus(status = HttpResponseStatusType.OK_200)
-public class GetPetMethods extends AbstractApiMethodV2 {
+public class PutPetMethods extends AbstractApiMethodV2 {
 
-    public GetPetMethods() {
+    public PutPetMethods() {
         replaceUrlPlaceholder("base_url", Configuration.getRequired("api_url"));
     }
 }

@@ -1,4 +1,4 @@
-package pet.store.api;
+package pet.store.api.users;
 
 import com.zebrunner.carina.api.AbstractApiMethodV2;
 import com.zebrunner.carina.api.annotation.Endpoint;
@@ -10,8 +10,8 @@ import com.zebrunner.carina.api.http.HttpResponseStatusType;
 import com.zebrunner.carina.utils.config.Configuration;
 
 @Endpoint(url = "${base_url}/v2/user", methodType = HttpMethodType.POST)
-@RequestTemplatePath(path = "api/users/_post/urq.json")
-@ResponseTemplatePath(path = "api/users/_post/urs.json")
+@RequestTemplatePath(path = "api/users/_post/user_rq.json")
+@ResponseTemplatePath(path = "api/users/_post/user_rs.json")
 @SuccessfulHttpStatus(status = HttpResponseStatusType.OK_200)
 public class PostUserMethods extends AbstractApiMethodV2 {
 

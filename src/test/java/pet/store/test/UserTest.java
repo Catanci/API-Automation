@@ -10,9 +10,11 @@ import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
-import pet.store.api.DeleteUserMethods;
-import pet.store.api.GetUserMethods;
-import pet.store.api.PostUserMethods;
+import pet.store.api.pets.PostPetMethods;
+import pet.store.api.users.DeleteUserMethods;
+import pet.store.api.users.GetUserMethods;
+import pet.store.api.users.PostUserMethods;
+import pet.store.api.users.PutUserMethods;
 
 import java.lang.invoke.MethodHandles;
 
@@ -25,11 +27,11 @@ public class UserTest implements IAbstractTest  {
     @MethodOwner(owner = "abuda")
     public void testCreateUser() {
         LOGGER.info("Test is starting...");
-        PostUserMethods api = new PostUserMethods();
-        api.setProperties("api/users/user.properties");
-        api.expectResponseStatus(HttpResponseStatusType.OK_200);
-        api.callAPI();
-        api.validateResponse();
+        PostUserMethods postUserMethods = new PostUserMethods();
+        postUserMethods.setProperties("api/users/user.properties");
+        postUserMethods.expectResponseStatus(HttpResponseStatusType.OK_200);
+        postUserMethods.callAPI();
+        postUserMethods.validateResponse();
     }
 
     @Test()
@@ -47,9 +49,26 @@ public class UserTest implements IAbstractTest  {
     @MethodOwner(owner = "abuda")
     public void testGetUser() {
         LOGGER.info("Test is starting...");
+        PostUserMethods postUserMethods = new PostUserMethods();
+        postUserMethods.setProperties("api/users/user.properties");
+        postUserMethods.callAPIExpectSuccess();
+        postUserMethods.validateResponse();
+
         GetUserMethods getUserMethods = new GetUserMethods();
+        getUserMethods.setProperties("api/users/user.properties");
         getUserMethods.callAPIExpectSuccess();
         getUserMethods.validateResponse(JSONCompareMode.STRICT, JsonCompareKeywords.ARRAY_CONTAINS.getKey());
         getUserMethods.validateResponseAgainstSchema("api/users/_get/rs.schema");
+    }
+
+
+    @Test()
+    @MethodOwner(owner = "abuda")
+    public void testPutUser() {
+        PutUserMethods putUserMethods = new PutUserMethods();
+
+        putUserMethods.setProperties("api/users/user.properties");
+        putUserMethods.callAPIExpectSuccess();
+        putUserMethods.validateResponse();
     }
 }

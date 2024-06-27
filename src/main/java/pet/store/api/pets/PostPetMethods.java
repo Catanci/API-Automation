@@ -1,4 +1,4 @@
-package pet.store.api;
+package pet.store.api.pets;
 
 import com.zebrunner.carina.api.AbstractApiMethodV2;
 import com.zebrunner.carina.api.annotation.Endpoint;

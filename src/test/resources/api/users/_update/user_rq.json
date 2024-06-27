@@ -1,0 +1,10 @@
+{
+  "id": 453443,
+  "username": "${name}",
+  "firstName": "string",
+  "lastName": "string",
+  "email": "mail@mail",
+  "password": "secretpass",
+  "phone": "53246",
+  "userStatus": 0
+}
