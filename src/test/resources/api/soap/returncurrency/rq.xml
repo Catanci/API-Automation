@@ -1,0 +1,8 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://www.oorsprong.org/websamples.countryinfo">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <tem:CurrencyName>
+            <tem:sCurrencyISOCode>${currencyName}</tem:sCurrencyISOCode>
+        </tem:CurrencyName>
+    </soapenv:Body>
+</soapenv:Envelope>

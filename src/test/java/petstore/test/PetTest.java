@@ -1,4 +1,4 @@
-package pet.store.test;
+package petstore.test;
 
 import com.zebrunner.carina.api.apitools.validation.JsonCompareKeywords;
 
