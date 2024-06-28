@@ -8,14 +8,11 @@ import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
 import com.zebrunner.carina.core.registrar.tag.Priority;
 import com.zebrunner.carina.core.registrar.tag.TestPriority;
 
-import pet.store.api.pets.PostPetImageMethods;
-import pet.store.api.pets.GetPetMethods;
-import pet.store.api.pets.PostPetMethods;
+import pet.store.api.pets.*;
 import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
-import pet.store.api.pets.PutPetMethods;
 
 import java.lang.invoke.MethodHandles;
 
@@ -49,6 +46,7 @@ public class PetTest implements IAbstractTest {
     @Test()
     @MethodOwner(owner = "abuda")
     public void testCreatePetMissingSomeFields() {
+        LOGGER.info("Test is starting...");
         PostPetMethods api = new PostPetMethods();
         api.setProperties("api/users/user.properties");
         api.getProperties().remove("id");
@@ -60,6 +58,7 @@ public class PetTest implements IAbstractTest {
     @Test()
     @MethodOwner(owner = "abuda")
     public void testGetPets() {
+        LOGGER.info("Test is starting...");
         GetPetMethods getPetMethods = new GetPetMethods();
         getPetMethods.callAPIExpectSuccess();
         getPetMethods.validateResponse(JSONCompareMode.STRICT, JsonCompareKeywords.ARRAY_CONTAINS.getKey());
@@ -70,7 +69,8 @@ public class PetTest implements IAbstractTest {
     @MethodOwner(owner = "abuda")
     @TestPriority(Priority.P1)
     public void testDeletePets() {
-        PostPetImageMethods deletePetMethods = new PostPetImageMethods();
+        LOGGER.info("Test is starting...");
+        DeletePetMethods deletePetMethods = new DeletePetMethods();
         deletePetMethods.setProperties("api/users/user.properties");
         deletePetMethods.callAPIExpectSuccess();
         deletePetMethods.validateResponse();
@@ -79,6 +79,7 @@ public class PetTest implements IAbstractTest {
     @Test()
     @MethodOwner(owner = "abuda")
     public void testPutPets() {
+        LOGGER.info("Test is starting...");
         PostPetMethods postPetMethods = new PostPetMethods();
         postPetMethods.setProperties("api/users/user.properties");
         postPetMethods.callAPIExpectSuccess();

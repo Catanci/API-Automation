@@ -10,7 +10,6 @@ import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
-import pet.store.api.pets.PostPetMethods;
 import pet.store.api.users.DeleteUserMethods;
 import pet.store.api.users.GetUserMethods;
 import pet.store.api.users.PostUserMethods;
@@ -38,6 +37,7 @@ public class UserTest implements IAbstractTest  {
     @MethodOwner(owner = "abuda")
     @TestPriority(Priority.P2)
     public void testDeleteUser() {
+        LOGGER.info("Test is starting...");
         DeleteUserMethods deleteUserMethods = new DeleteUserMethods();
         deleteUserMethods.setProperties("api/users/user.properties");
         deleteUserMethods.callAPIExpectSuccess();
@@ -61,12 +61,11 @@ public class UserTest implements IAbstractTest  {
         getUserMethods.validateResponseAgainstSchema("api/users/_get/rs.schema");
     }
 
-
     @Test()
     @MethodOwner(owner = "abuda")
     public void testPutUser() {
+        LOGGER.info("Test is starting...");
         PutUserMethods putUserMethods = new PutUserMethods();
-
         putUserMethods.setProperties("api/users/user.properties");
         putUserMethods.callAPIExpectSuccess();
         putUserMethods.validateResponse();

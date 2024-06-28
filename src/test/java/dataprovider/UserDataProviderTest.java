@@ -14,14 +14,12 @@ public class UserDataProviderTest {
     @MethodOwner(owner = "abuda")
     public void testCreateUserFromObject(String username, String firstName, String lastName, String email, String password, String phone, int userStatus) {
         User user = new User();
-
         user.setUsername(username);
         user.setFirstName(firstName);
         user.setLastName(lastName);
         user.setEmail(email);
         user.setPassword(password);
         user.setPhone(phone);
-
 
         XlsxPostMethod xlsxPostMethod = new XlsxPostMethod();
         xlsxPostMethod.setRequestBody(user);

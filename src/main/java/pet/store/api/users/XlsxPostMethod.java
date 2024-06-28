@@ -17,7 +17,6 @@ import java.io.IOException;
 @Endpoint(url = "${base_url}/v2/user", methodType = HttpMethodType.POST)
 @SuccessfulHttpStatus(status = HttpResponseStatusType.OK_200)
 @ResponseTemplatePath(path = "api/users/_post/user_xlsx_rs.json")
-
 public class XlsxPostMethod extends AbstractApiMethodV2 {
 
     public XlsxPostMethod() {
@@ -68,3 +67,4 @@ public class XlsxPostMethod extends AbstractApiMethodV2 {
         }
     }
 }
+
