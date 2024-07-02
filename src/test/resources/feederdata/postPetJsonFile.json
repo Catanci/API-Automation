@@ -1,0 +1,56 @@
+[
+  {
+    "id": 5421,
+    "category": {
+      "id": 0,
+      "name": "string"
+    },
+    "name": "slick rick",
+    "photoUrls": [
+      "string"
+    ],
+    "tags": [
+      {
+        "id": 0,
+        "name": "string"
+      }
+    ],
+    "status": "available"
+  },
+  {
+    "id": 12345,
+    "category": {
+      "id": 0,
+      "name": "string"
+    },
+    "name": "drdre",
+    "photoUrls": [
+      "string"
+    ],
+    "tags": [
+      {
+        "id": 0,
+        "name": "string"
+      }
+    ],
+    "status": "sold"
+  },
+  {
+    "id": 634332225755,
+    "category": {
+      "id": 0,
+      "name": "string"
+    },
+    "name": "ciapek",
+    "photoUrls": [
+      "string"
+    ],
+    "tags": [
+      {
+        "id": 0,
+        "name": "string"
+      }
+    ],
+    "status": "pending"
+  }
+]

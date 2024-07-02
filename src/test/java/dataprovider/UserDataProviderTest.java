@@ -29,7 +29,7 @@ public class UserDataProviderTest {
     @DataProvider(name = "DP1")
     public static Object[][] provideUserData() {
         return new Object[][]{
-                {"bogdanoff", "John", "Doe", "example@example.com", "password", "123456789", 0},
+                {"testuser", "John", "Doe", "example@example.com", "password", "123456789", 0},
         };
     }
 
