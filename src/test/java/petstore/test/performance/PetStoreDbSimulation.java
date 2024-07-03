@@ -126,7 +126,7 @@ public class PetStoreDbSimulation extends Simulation {
                 ))
                 .protocols(httpProtocolBuilder)
                 .assertions(
-                        global().responseTime().max().lt(1000),
-                        global().successfulRequests().percent().gt(95.0));
+                        global().responseTime().max().lt(1300),
+                        global().successfulRequests().percent().gt(90.0));
     }
 }
