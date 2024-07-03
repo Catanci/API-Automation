@@ -28,11 +28,11 @@ ____
 ### Execution
 1. **Launch your IDE**: Open your preferred Java IDE (e.g., IntelliJ IDEA, Eclipse).
 2. **Import Project**: Import the project as a Maven project. Select the project's root directory.
-3**Run Tests**:
+3. **Run Tests**:
    * **API Tests**:
       * **IDE**: Run tests directly from your IDE by right-clicking on the test class or method and selecting "Run" or choose NG Suite to run all tests.
       * **Command Line**: Navigate to the project's root directory and execute `mvn test` to run all API tests.
-      * **Performance Tests (Gatling)**:Run tests from within the terminal in IDE with `cmd.exe /c mvnw.cmd gatling:test` command on Windows.
+      * **Performance Tests (Gatling)**:Run tests from within the terminal in IDE with `cmd.exe /c mvnw.cmd gatling:test` command on Windows or `mvnw.cmd gatling:test` in general.
 ____
 ### Jenkins Integration
 #### Pre-requisites
@@ -48,7 +48,7 @@ ____
    * **Branches to build**: */master
    * **Build Steps**: Invoke top-level Maven targets
      ```
-     mvn clean test  # Command for API tests
+     clean test  # Command for API tests
      gatling:test  # Command for Gatling performance tests
      ```
 
