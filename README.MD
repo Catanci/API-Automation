@@ -1,4 +1,4 @@
-## 📌 API Testing and Performance Project
+## 🤖 API Testing and Performance Project
 
 This project showcases a comprehensive automation framework for API testing, focusing on REST APIs with additional support for SOAP and performance testing using Gatling.
 
@@ -32,7 +32,7 @@ ____
    * **API Tests**:
       * **IDE**: Run tests directly from your IDE by right-clicking on the test class or method and selecting "Run" or choose NG Suite to run all tests.
       * **Command Line**: Navigate to the project's root directory and execute `mvn test` to run all API tests.
-     * **Performance Tests (Gatling)**:Run tests from within the terminal in IDE with `cmd.exe /c mvnw.cmd gatling:test` command on Windows.
+      * **Performance Tests (Gatling)**:Run tests from within the terminal in IDE with `cmd.exe /c mvnw.cmd gatling:test` command on Windows.
 ____
 ### Jenkins Integration
 #### Pre-requisites
@@ -46,11 +46,10 @@ ____
 3. **Freestyle Configuration**:
    * **Repository URL**: Set to your Git repository URL.
    * **Branches to build**: */master
-   * **Build Steps**: Execute shell commands:
+   * **Build Steps**: Invoke top-level Maven targets
      ```
-     cd path/to/your/project
      mvn clean test  # Command for API tests
-     mvn gatling:test  # Command for Gatling performance tests
+     gatling:test  # Command for Gatling performance tests
      ```
 
 4. **Node Selection**: Ensure the Jenkins job runs on a Windows node.
